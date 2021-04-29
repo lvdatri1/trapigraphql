@@ -24,6 +24,7 @@ return ({
 }
  
 else{
+  console.log('inside the production: with db host', env('DATABASE_HOST', 'localhost'));
 return ({
   defaultConnection: 'default',
   connections: {
