@@ -1,5 +1,9 @@
 module.exports = ({ env })=> {
+
 const dbHost = env('DATABASE_HOST', 'localhost');
+console.log('test env', dbhost);
+console.log('env', env('DATABASE_FILENAME', '.tmp/data.db'));
+
 if (dbHost=='localhost')
 {
 return ({
