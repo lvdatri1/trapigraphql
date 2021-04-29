@@ -1,10 +1,10 @@
 module.exports = ({ env })=> {
 
-const dbHost = env('DATABASE_HOST', 'localhost');
-console.log('test env', dbhost);
+const ex = env('NODE_ENV', 'localhost');
+console.log('test env', ex);
 console.log('env', env('DATABASE_FILENAME', '.tmp/data.db'));
 
-if (dbHost=='localhost')
+if (process.env.NODE_ENV=='development')
 {
 return ({
   defaultConnection: 'default',
