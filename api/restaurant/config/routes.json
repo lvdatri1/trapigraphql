@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/restaurants",
-      "handler": "restaurant.find",
+      "handler": "restaurant.findOne",
       "config": {
         "policies": []
       }
@@ -12,6 +12,14 @@
       "method": "GET",
       "path": "/restaurants/count",
       "handler": "restaurant.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/restaurants/count2",
+      "handler": "restaurant.findOneAPI",
       "config": {
         "policies": []
       }
