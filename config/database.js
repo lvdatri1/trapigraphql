@@ -1,12 +1,4 @@
-module.exports = ({ env })=> {
-
-const ex = env('NODE_ENV', 'localhost');
-console.log('test env', ex);
-console.log('env', env('DATABASE_FILENAME', '.tmp/data.db'));
-
-if (process.env.NODE_ENV=='development')
-{
-return ({
+module.exports = ({ env }) => ({
   defaultConnection: 'default',
   connections: {
     default: {
@@ -20,35 +12,4 @@ return ({
       },
     },
   },
-});  
-}
- 
-else{
-  console.log('inside the production: with db host', env('DATABASE_HOST', 'localhost'));
-return ({
-  defaultConnection: 'default',
-  connections: {
-    default: {
-      connector: 'bookshelf',
-      settings: {
-        client: 'postgres',
-        host: env('DATABASE_HOST', 'localhost'),
-        port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'strapi'),
-        username: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
-        schema: env('DATABASE_SCHEMA', 'public'), // Not Required
-        ssl: {
-          rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
-        },
-      },
-      options: {
-        ssl: env.bool('DATABASE_SSL', false),
-      },
-    },
-  },
 });
-}
-
-} 
-
