@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/userlikeposts",
+      "handler": "userlikepost.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/userlikeposts/count",
+      "handler": "userlikepost.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/userlikeposts/:id",
+      "handler": "userlikepost.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/userlikeposts",
+      "handler": "userlikepost.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/userlikeposts/:id",
+      "handler": "userlikepost.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/userlikeposts/:id",
+      "handler": "userlikepost.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

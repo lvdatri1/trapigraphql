@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "details": {
+      "type": "richtext"
+    },
+    "created": {
+      "type": "datetime"
+    },
+    "likes": {
+      "type": "integer"
+    },
+    "userlikeposts": {
+      "via": "post",
+      "collection": "userlikepost"
+    },
+    "comments": {
+      "via": "postid",
+      "collection": "comment"
+    }
+  }
+}

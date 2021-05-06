@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "userlikeposts",
+  "info": {
+    "name": "userlikepost"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "created": {
+      "type": "datetime"
+    },
+    "userid": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "userlikeposts"
+    },
+    "post": {
+      "model": "post",
+      "via": "userlikeposts"
+    }
+  }
+}
