@@ -5,9 +5,10 @@
  */
 
 module.exports = {
-    findOneAPI:async ()=>{
+  findOneAPI: async (ctx) => {
 
-      console.log('heello ')
-      return entity;  
-    }
+    console.log('heello ');
+    ctx.send('hello');
+    return null;
+  }
 };
